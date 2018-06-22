@@ -14,7 +14,7 @@ int main(int argc, char const *argv[])
     }
     std::string keyword = std::string(argv[1]);
 
-    searchInFiles sif;
+    wfind sif;
     if (argc > 2)
         sif.changeDirectory(fs::path(std::string(argv[2])));
 

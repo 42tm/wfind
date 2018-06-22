@@ -1,6 +1,6 @@
 #include "wfind.hpp"
 
-std::vector<fs::directory_entry> searchInFiles::searchDirectory(std::string regexr)
+std::vector<fs::directory_entry> wfind::searchDirectory(std::string regexr)
 {
     std::vector<fs::directory_entry> result;
     for (auto &&file : fs::recursive_directory_iterator(curWorkingDir))
@@ -11,7 +11,7 @@ std::vector<fs::directory_entry> searchInFiles::searchDirectory(std::string rege
     return result;
 }
 
-bool searchInFiles::contentMatch(fs::path filename, std::string regexr)
+bool wfind::contentMatch(fs::path filename, std::string regexr)
 {
     std::ifstream inp(filename.string(), std::ios::in | std::ios::binary);
     std::regex expr(regexr);
