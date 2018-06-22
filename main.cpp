@@ -8,8 +8,9 @@ int main(int argc, char const *argv[])
     {
         std::cout << "wfind - Find files whose contents match the given search regular expression"
                   << std::endl << std::endl
-                  << argv[0] << " [regex] (directory)" << std::endl << std::endl
-                  << "  regex     : regex used to find in files" << std::endl
+                  << "Usage: " << argv[0] << " [regex [directory]]"
+                  << std::endl << std::endl
+                  << "  regex     : Regular expression used to find in files" << std::endl
                   << "  directory : (Optional) look up location" << std::endl;
         return 0;
     }
