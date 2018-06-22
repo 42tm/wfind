@@ -1,6 +1,5 @@
 wfind
 =====
-Search content in files recursively using regex
 Look for files whose contents match the specified regular expression (regex).
 
 ## Build
@@ -24,13 +23,12 @@ Run the following command:
 ```bash
 ./wfind '\bbooks\b' example/
 ```
+
 You should see something like this as the output:
 ```bash
-$ ./wfind '\bbooks\b' example/
-Cwd: "example/"
+Looking up directory: "example/"
 Regex: "\bbooks\b"
-"example/file1"
 "example/file3"
-2 file(s) found
-$ 
+"example/file1"
+2 file(s) found. 
 ```
