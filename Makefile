@@ -1,7 +1,12 @@
 CC = g++
 ARG = -std=c++17 -lstdc++fs
-NAME = main
+MAIN = main.cpp
+ifeq ($(OS),Windows_NT)
+	NAME = wfind.exe
+else
+	NAME = wfind
+endif
 OBJECT = src/wfind.cpp
 
 all:
-	$(CC) $(NAME).cpp $(OBJECT) -o $(NAME) $(ARG)
+	$(CC) $(MAIN) $(OBJECT) -o $(NAME) $(ARG)
