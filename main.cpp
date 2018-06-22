@@ -6,7 +6,7 @@ int main(int argc, char const *argv[])
 {
     if (argc == 1)
     {
-        std::cout << "Use '--help' for more information" << std::endl;
+        std::cout << "use '--help' for more information" << std::endl;
         return 0;
     }
     if (argc > 1 && (argv[1] == "-h" || argv[1] == "--help"))
@@ -30,13 +30,25 @@ int main(int argc, char const *argv[])
     std::cout << "Cwd: " << sif.currentDirectory() << std::endl;
     std::cout << "Keyword: \"" << keyword << "\"" << std::endl;
 
-    auto result = sif.searchDirectory(keyword);
+    std::vector<fs::directory_entry> result;
+    try
+    {
+        result = sif.searchDirectory(keyword);
+    }
+    catch (std::regex_error e)
+    {
+        std::cout << "regex error" << std::endl;
+    }
     for (auto &&iter : result)
         std::cout << iter << std::endl;
     if (result.empty())
     {
         std::cout << "no files found" << std::endl;
     }
-    
+    else
+    {
+        std::cout << result.size() << " file(s) found" << std::endl;
+    }
+
     return 0;
 }

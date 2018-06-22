@@ -2,6 +2,15 @@
 
 std::vector<fs::directory_entry> wfind::searchDirectory(std::string regexr)
 {
+    try
+    {
+        std::regex expr(regexr);
+    }
+    catch (std::regex_error e)
+    {
+        throw e;
+    }
+
     std::vector<fs::directory_entry> result;
     for (auto &&file : fs::recursive_directory_iterator(curWorkingDir))
     {
