@@ -4,12 +4,7 @@
 
 int main(int argc, char const *argv[])
 {
-    if (argc == 1)
-    {
-        std::cout << "use '--help' for more information" << std::endl;
-        return 0;
-    }
-    if (argc > 1 && (argv[1] == "-h" || argv[1] == "--help"))
+    if ((argc == 1) || (argc == 2 && (argv[1] == std::string("-h") || argv[1] == std::string("--help"))))
     {
         std::cout << argv[0] << " [regex] (directory)" << std::endl
                   << std::endl
