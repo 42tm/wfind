@@ -27,7 +27,7 @@ class wfind
     std::vector<fs::directory_entry> searchDirectory(std::string keyword);
     bool changeDirectory(fs::path path)
     {
-        if (!fs::exists(path) && !fs::is_directory(path))
+        if (!fs::exists(path) || !fs::is_directory(fs::status(path)))
             return false;
         this->curWorkingDir = path;
         return true;
