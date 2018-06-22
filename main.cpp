@@ -6,7 +6,10 @@ int main(int argc, char const *argv[])
 {
     if (argc < 2)
     {
-        std::cout << "no input files\n";
+        std::cout << argv[0] << " [regex] (directory)" << std::endl
+                  << std::endl
+                  << "regex     : regex used to find in files" << std::endl
+                  << "directory : (Optional) look up location" << std::endl;
         return 0;
     }
     std::string keyword = std::string(argv[1]);
