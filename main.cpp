@@ -4,7 +4,12 @@
 
 int main(int argc, char const *argv[])
 {
-    if (argc < 2)
+    if (argc == 1)
+    {
+        std::cout << "Use '--help' for more information" << std::endl;
+        return 0;
+    }
+    if (argc > 1 && (argv[1] == "-h" || argv[1] == "--help"))
     {
         std::cout << argv[0] << " [regex] (directory)" << std::endl
                   << std::endl
@@ -16,7 +21,11 @@ int main(int argc, char const *argv[])
 
     wfind sif;
     if (argc > 2)
-        sif.changeDirectory(fs::path(std::string(argv[2])));
+        if (!sif.changeDirectory(fs::path(std::string(argv[2]))))
+        {
+            std::cout << "invalid directory" << std::endl;
+            return 1;
+        }
 
     std::cout << "Cwd: " << sif.currentDirectory() << std::endl;
     std::cout << "Keyword: \"" << keyword << "\"" << std::endl;
@@ -25,6 +34,9 @@ int main(int argc, char const *argv[])
     for (auto &&iter : result)
         std::cout << iter << std::endl;
     if (result.empty())
+    {
         std::cout << "no files found" << std::endl;
+    }
+    
     return 0;
 }
