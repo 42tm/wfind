@@ -12,7 +12,7 @@ make
 ./wfind [regex] [directory]
 ```
 
-- regex     : The regular expressoin to be used to find in files
+- regex     : The regular expression to be used to find in files
 - directory : (Optional) Directory that contains the files to look up for
 > If the directory is omitted, the location is set to current working directory.
 
