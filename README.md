@@ -9,7 +9,7 @@ make
 
 ## Run
 ```bash
-./wfind [regex [directory]]
+./wfind [regex] [directory]
 ```
 
 - regex     : The regular expressoin to be used to find in files
