@@ -37,13 +37,9 @@ int main(int argc, char const *argv[])
     for (auto &&iter : result)
         std::cout << iter << std::endl;
     if (result.empty())
-    {
         std::cout << "no files found" << std::endl;
-    }
     else
-    {
         std::cout << result.size() << " file(s) found" << std::endl;
-    }
 
     return 0;
 }
