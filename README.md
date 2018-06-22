@@ -30,5 +30,6 @@ Cwd: "example/"
 Keyword: "\bbooks\b"
 "example/file1"
 "example/file3"
+2 file(s) found
 $ 
 ```
