@@ -1,9 +1,9 @@
 .vscode/
 *
+!*.cpp
 !example/
 !src/
 !.gitignore
-!LICENSE
-!main.cpp
+!UNLICENSE
 !Makefile
-!README
+!README.md
