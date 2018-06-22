@@ -20,8 +20,17 @@ class wfind
     bool contentMatch(fs::path filename, std::string keyword);
 
   public:
-    wfind(std::string path = fs::current_path()) : curWorkingDir(path) {}
+    wfind(std::string path = fs::current_path())
+    {
+        changeDirectory(path);
+    }
     std::vector<fs::directory_entry> searchDirectory(std::string keyword);
-    void changeDirectory(fs::path path) { this->curWorkingDir = path; }
+    bool changeDirectory(fs::path path)
+    {
+        if (!fs::exists(path) && !fs::is_directory(path))
+            return false;
+        this->curWorkingDir = path;
+        return true;
+    }
     const fs::path &currentDirectory() { return curWorkingDir; }
 };
