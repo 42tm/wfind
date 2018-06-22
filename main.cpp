@@ -11,7 +11,7 @@ int main(int argc, char const *argv[])
                   << "Usage: " << argv[0] << " [regex [directory]]"
                   << std::endl << std::endl
                   << "  regex     : Regular expression used to find in files" << std::endl
-                  << "  directory : (Optional) look up location" << std::endl;
+                  << "  directory : (Optional) Directory for look up" << std::endl;
         return 0;
     }
 
