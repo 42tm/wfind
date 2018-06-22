@@ -1,2 +1,9 @@
 .vscode/
-build/
+*
+!example/
+!src/
+!.gitignore
+!LICENSE
+!main.cpp
+!Makefile
+!README

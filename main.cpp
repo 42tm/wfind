@@ -23,7 +23,7 @@ int main(int argc, char const *argv[])
         }
 
     std::cout << "Cwd: " << sif.currentDirectory() << std::endl;
-    std::cout << "Keyword: \"" << keyword << "\"" << std::endl;
+    std::cout << "Regex: \"" << keyword << "\"" << std::endl;
 
     std::vector<fs::directory_entry> result;
     try

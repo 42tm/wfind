@@ -27,7 +27,7 @@ You should see the output similar to below:
 ```bash
 $ ./wfind '\bbooks\b' example/
 Cwd: "example/"
-Keyword: "\bbooks\b"
+Regex: "\bbooks\b"
 "example/file1"
 "example/file3"
 2 file(s) found
