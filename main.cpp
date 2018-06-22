@@ -24,5 +24,7 @@ int main(int argc, char const *argv[])
     auto result = sif.searchDirectory(keyword);
     for (auto &&iter : result)
         std::cout << iter << std::endl;
+    if (result.empty())
+        std::cout << "no files found" << std::endl;
     return 0;
 }
