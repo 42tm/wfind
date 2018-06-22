@@ -3,10 +3,15 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-#include <filesystem>
 #include <regex>
 
+#if __cplusplus < 201703L
+#include <experimental/filesystem>
+namespace fs = std::experimental::filesystem;
+#else
+#include <filesystem>
 namespace fs = std::filesystem;
+#endif
 
 class wfind
 {
