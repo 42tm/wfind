@@ -5,7 +5,7 @@
 #include <fstream>
 #include <regex>
 
-#if __cplusplus < 201703L
+#if (__cplusplus < 201703L || __GNUC__ < 8)
 #include <experimental/filesystem>
 namespace fs = std::experimental::filesystem;
 #else

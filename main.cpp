@@ -1,9 +1,4 @@
 #include <iostream>
-#if __cplusplus < 201703L
-#include <experimental/filesystem>
-#else
-#include <filesystem>
-#endif
 #include "src/wfind.hpp"
 
 int main(int argc, char const *argv[])
