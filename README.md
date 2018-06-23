@@ -1,6 +1,9 @@
 wfind
 =====
-Look for files whose contents match the specified regular expression (regex).
+wfind is a library providing the function to look for files
+whose contents match the specified regular expression (regex).
+
+The library is in `lib/`, and a simple program that uses this library is `main.cpp`.
 
 ## Build
 
@@ -10,14 +13,17 @@ Look for files whose contents match the specified regular expression (regex).
     + Recommended: C++ 17
     + Minimum: C++ 11
 
-> Older versions of `g++` and other C++ compilers are not tested, the build might be failed. Use at your own risk.
+> Older versions of `g++` and other C++ compilers are yet to be tested, the build might fail.
 
-> In MinGW-w64 g++ 8.1.0, due to a [bug](https://sourceforge.net/p/mingw-w64/bugs/737/), you can't compile `<filesystem>` library. It is recommended to use other version (7.3.0) on Windows.
+> In MinGW-w64 g++ 8.1.0, due to a [bug](http://sourceforge.net/p/mingw-w64/bugs/737/), you can't compile `<filesystem>` library. It is recommended to use other version (7.3.0) on Windows.
+
 ### Command
 
 ```bash
 make
 ```
+
+This will compile `main.cpp`.
 
 ## Run
 
