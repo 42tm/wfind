@@ -35,7 +35,7 @@ int main(int argc, char const *argv[])
     }
     catch (std::regex_error e)
     {
-        std::cout << "wfind: regex error." << std::endl;
+        std::cout << "wfind: regex error" << std::endl;
     }
 
     for (auto &&iter : result)

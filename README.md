@@ -28,7 +28,7 @@ You should see something like this as the output:
 ```bash
 Looking up directory: "example/"
 Regex: "\bbooks\b"
-"example/file3"
 "example/file1"
-2 file(s) found. 
+"example/file3"
+wfind: 2 file(s) found.
 ```
