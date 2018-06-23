@@ -45,11 +45,11 @@ Run the following command:
 ./wfind '\bbooks\b' example/
 ```
 
-You should see something like this as the output:
+You should see something like this as part of the output:
 ```bash
 Looking up directory: "example/"
 Regex: "\bbooks\b"
-"example/file1"
 "example/file3"
+"example/file1"
 wfind: 2 file(s) found.
 ```
