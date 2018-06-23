@@ -1,5 +1,6 @@
 *
 !*.cpp
+!*.hpp
 !example/
 !lib/
 !.gitignore
