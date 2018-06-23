@@ -1,5 +1,5 @@
 #include <iostream>
-#include "src/wfind.hpp"
+#include "lib/wfind.hpp"
 
 int main(int argc, char const *argv[])
 {
