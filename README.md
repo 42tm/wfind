@@ -3,20 +3,35 @@ wfind
 Look for files whose contents match the specified regular expression (regex).
 
 ## Build
+
+### Requirement
+
+- `g++` version 6 or later (`-lstdc++fs`)
+    + Recommended: C++ 17
+    + Minimum: C++ 11
+
+> Older versions of `g++` and other C++ compilers are not tested, the build might be failed. Use at your own risk.
+
+> In MinGW-w64 g++ 8.1.0, due to a [bug](https://sourceforge.net/p/mingw-w64/bugs/737/), you can't compile `<filesystem>` library. It is recommended to use other version (7.3.0) on Windows.
+### Command
+
 ```bash
 make
 ```
 
 ## Run
+
 ```bash
 ./wfind [regex] [directory]
 ```
 
 - regex     : The regular expression to be used to find in files
 - directory : (Optional) Directory that contains the files to look up for
+
 > If the directory is omitted, the location is set to current working directory.
 
 ## Example
+
 (There are prepared files for this example in `example/`)
 
 Run the following command:
