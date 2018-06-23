@@ -10,11 +10,11 @@ int main(int argc, char const *argv[])
 #if defined(__GNUC__)
     std::cout
         << "  built with gcc " << __GNUC__ << "." << __GNUC_MINOR__ << "." << __GNUC_PATCHLEVEL__;
-        
+
 #if defined(__MINGW64__)
-    std::cout << " (MinGW-w64 64bit " << __MINGW64_VERSION_MAJOR << "." << __MINGW64_VERSION_MINOR << ")";
+    std::cout << " (MinGW-w64 64bit)";
 #elif defined(__MINGW32__)
-    std::cout << " (MinGW/MinGW-w64 32bit " << __MINGW32_VERSION_MAJOR << "." << __MINGW32_VERSION_MINOR << ")";
+    std::cout << " (MinGW/MinGW-w64 32bit)";
 #endif
 
 #ifdef __CYGWIN__
