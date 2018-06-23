@@ -3,14 +3,17 @@
 
 int main(int argc, char const *argv[])
 {
+    std::cout
+        << "wfind - Find files whose contents match the given search regular expression" << std::endl
+        << "  built with gcc " << __GNUC__ << "." << __GNUC_MINOR__ << "." << __GNUC_PATCHLEVEL__ << "\t" << std::endl;
     if ((argc == 1) || (argc == 2 && (argv[1] == std::string("-h") || argv[1] == std::string("--help"))))
     {
-        std::cout << "wfind - Find files whose contents match the given search regular expression"
-                  << std::endl << std::endl
-                  << "Usage: " << argv[0] << " [regex] [directory]"
-                  << std::endl << std::endl
-                  << "  regex     : Regular expression used to find in files" << std::endl
-                  << "  directory : (Optional) Directory for look up" << std::endl;
+        std::cout
+            << std::endl
+            << "Usage: " << argv[0] << " [regex] [directory]" << std::endl
+            << std::endl
+            << "  regex     : Regular expression used to find in files" << std::endl
+            << "  directory : (Optional) Directory for look up" << std::endl;
         return 0;
     }
 
