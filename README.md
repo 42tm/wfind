@@ -53,3 +53,7 @@ Regex: "\bbooks\b"
 "example/file1"
 wfind: 2 file(s) found.
 ```
+
+## License
+
+This work is licensed under [The Unlicense](http://unlicense.org/), meaning it is dedicated to the Public Domain.
