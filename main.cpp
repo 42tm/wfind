@@ -1,3 +1,9 @@
+/**
+ This is free and unencumbered software released into the public domain.
+
+ See the included UNLICENSE file, or http://unlicense.org/
+ */
+
 #include <iostream>
 #include "lib/wfind.hpp"
 
