@@ -1,7 +1,7 @@
 *
 !*.cpp
 !example/
-!src/
+!lib/
 !.gitignore
 !UNLICENSE
 !Makefile
