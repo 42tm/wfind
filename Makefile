@@ -6,7 +6,7 @@ ifeq ($(OS),Windows_NT)
 else
 	NAME = wfind
 endif
-OBJECT = src/wfind.cpp
+OBJECT = lib/wfind.cpp
 
 all:
 	$(CC) $(MAIN) $(OBJECT) -o $(NAME) $(ARG)

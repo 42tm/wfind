@@ -1,5 +1,11 @@
+/**
+ This is free and unencumbered software released into the public domain.
+
+ See the included UNLICENSE file, or http://unlicense.org/
+ */
+
 #include <iostream>
-#include "src/wfind.hpp"
+#include "lib/wfind.hpp"
 
 int main(int argc, char const *argv[])
 {
