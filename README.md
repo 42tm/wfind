@@ -3,7 +3,7 @@ wfind
 wfind is a library providing the function to look for files
 whose contents match the specified regular expression (regex).
 
-The library is in `lib/`, and a simple program that uses this library is `main.cpp`.
+The library is in `lib/`, and a simple program which has the same name that uses this library is `main.cpp`.
 
 ## Build
 
