@@ -21,7 +21,7 @@ int main(int argc, char const *argv[])
     if (argc > 2)
         if (!sif.changeDirectory(fs::path(std::string(argv[2]))))
         {
-            std::cout << "Directory does not exist." << std::endl;
+            std::cout << "wfind: directory does not exist." << std::endl;
             return 1;
         }
 
@@ -35,15 +35,15 @@ int main(int argc, char const *argv[])
     }
     catch (std::regex_error e)
     {
-        std::cout << "Regex error." << std::endl;
+        std::cout << "wfind: regex error." << std::endl;
     }
 
     for (auto &&iter : result)
         std::cout << iter << std::endl;
     if (result.empty())
-        std::cout << "No files found." << std::endl;
+        std::cout << "wfind: no files found." << std::endl;
     else
-        std::cout << result.size() << " file(s) found." << std::endl;
+        std::cout << "wfind: " << result.size() << " file(s) found." << std::endl;
 
     return 0;
 }
