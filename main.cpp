@@ -13,9 +13,11 @@ int main(int argc, char const *argv[])
         << "wfind - Find files whose contents match the given search regular expression" << std::endl;
 
 // Check compiler's name & version
-#if defined(__GNUC__)
+#if defined(__clang__)
+    std::cout << "  built with Clang " << __clang_version__ << std::endl;
+#elif defined(__GNUC__)
     std::cout
-        << "  built with gcc " << __GNUC__ << "." << __GNUC_MINOR__ << "." << __GNUC_PATCHLEVEL__;
+        << "  built with GCC " << __GNUC__ << "." << __GNUC_MINOR__ << "." << __GNUC_PATCHLEVEL__;
 
 #if defined(__MINGW64__)
     std::cout << " (MinGW-w64 64bit)";
