@@ -62,6 +62,12 @@ make clean
 
 > If the directory is omitted, the location is set to current working directory.
 
+## Install (GNU/Linux)
+
+```bash
+make install
+```
+
 ## Example
 
 (There are prepared files for this example in `example/`)
