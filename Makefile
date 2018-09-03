@@ -32,9 +32,8 @@ clean:
 	$(RM) *.obj
 
 install:
-	LINUX_CHECK := $(shell uname -s)
-	ifeq ($(LINUX_CHECK),Linux)
-		$(INS_UTIL) $(NAME) $(INS_TARGET)
-	else
+ifeq ($(shell uname -s),Linux)
+	$(INS_UTIL) $(NAME) $(INS_TARGET)
+else
 		$(ERR_PRINT) "\"make install\" is only available for Linux!
-	endif
+endif
