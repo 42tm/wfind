@@ -6,6 +6,11 @@ ARG = -std=c++17 -lstdc++fs
 VCC = cl
 V_ARG = /clr /std:c++latest
 
+# Install on Linux
+INS_UTIL = cp
+INS_TARGET = /usr/bin/
+ERR_PRINT = echo
+
 MAIN = main.cpp
 ifeq ($(OS),Windows_NT)
 	NAME = wfind.exe
@@ -25,3 +30,11 @@ vc:
 clean:
 	$(RM) $(NAME)
 	$(RM) *.obj
+
+install:
+	LINUX_CHECK := $(shell uname -s)
+	ifeq ($(LINUX_CHECK),Linux)
+		$(INS_UTIL) $(NAME) $(INS_TARGET)
+	else
+		$(ERR_PRINT) "\"make install\" is only available for Linux!
+	endif
