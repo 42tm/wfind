@@ -5,5 +5,5 @@
 !lib/
 !.gitignore
 !UNLICENSE
-!Makefile
+!CMakeLists.txt
 !README.md
