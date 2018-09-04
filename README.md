@@ -16,12 +16,12 @@ The library is in `lib/`, and a simple program which has the same name that uses
 
 - Tested compiler:
 
-  - GNU C++ Compiler (Version 6 or later)
-  - MS Visual C++ Compiler
+  - GNU C++ Compiler _5.3 or later_
+  - MS Visual C++ Compiler _14.0 (2015) or later_
 
 > Older versions of `g++` and other C++ compilers are yet to be tested, the build might fail.
 
-> In MinGW-w64 g++ 8.1.0, due to a [bug](http://sourceforge.net/p/mingw-w64/bugs/737/), you can't compile `<filesystem>` library. It is recommended to use other version (7.3.0) on Windows.
+> In MinGW-w64 g++ 8.1.0, due to a [bug](http://sourceforge.net/p/mingw-w64/bugs/737/), you can't compile `<filesystem>` library. It is recommended to use other version of MinGW-w64 (7.3.0) on Windows.
 
 ### Command
 
