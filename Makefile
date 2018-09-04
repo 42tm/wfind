@@ -22,20 +22,27 @@ else
 endif
 OBJECT = lib/wfind.cpp
 
+# Versioning
+VER := $(shell git describe --tags)
+# VER := $(shell git rev-parse --short HEAD)
+BUILD_VER =_WFIND_VERSION=\"$(VER)\"
+
 # By default, GCC C++ Compiler would be selected
 all: gcc
 
 gcc:
-	$(CC) $(MAIN) $(OBJECT) -o $(NAME) $(ARG)
+	$(CC) $(MAIN) $(OBJECT) -o $(NAME) $(ARG) -D$(BUILD_VER)
 
 gcc-static:
-	$(CC) $(MAIN) $(OBJECT) -o $(NAME) $(ARG) $(ARG_STATIC)
+	$(CC) $(MAIN) $(OBJECT) -o $(NAME) $(ARG) $(ARG_STATIC) -D$(BUILD_VER)
 
 vc:
-	$(VCC) $(V_ARG) /Fe"$(NAME)" $(MAIN) $(OBJECT)
+	$(VCC) $(V_ARG) /Fe"$(NAME)" $(MAIN) $(OBJECT) /D$(BUILD_VER)
 
 vc-static:
-	$(VCC) $(V_ARG) /Fe"$(NAME)" $(MAIN) $(OBJECT) $(V_ARG_STATIC)
+	$(VCC) $(V_ARG) /Fe"$(NAME)" $(MAIN) $(OBJECT) $(V_ARG_STATIC) /D$(BUILD_VER)
+
+release:
 
 
 clean:
