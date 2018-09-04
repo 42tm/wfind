@@ -9,7 +9,7 @@ The library is in `lib/`, and a simple program which has the same name that uses
 
 ### Requirement
 
-- C++ Version: C++ 17
+- C++ Version: C++ 17 (`__has_include`, `<filesystem>`)
 
 - Tested compiler:
 
