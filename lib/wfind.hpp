@@ -11,14 +11,21 @@
 #include <fstream>
 #include <regex>
 
-#if __has_include(<filesystem>)
+#if __has_include(<filesystem>) && __cplusplus >= 201703L
 #include <filesystem>
-namespace fs = std::filesystem;
 #elif __has_include(<experimental/filesystem>)
 #include <experimental/filesystem>
-namespace fs = std::experimental::filesystem;
+#warning "Using <experimental/filesystem>"
 #else
 #error "Missing <filesystem>"
+#endif
+
+#ifdef __cpp_lib_filesystem
+namespace fs = std::filesystem;
+#elif defined(__cpp_lib_experimental_filesystem)
+namespace fs = std::experimental::filesystem;
+#else
+#error "Missing std::filesystem"
 #endif
 
 class wfind

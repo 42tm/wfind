@@ -31,13 +31,13 @@ std::vector<fs::directory_entry> wfind::searchDirectory(std::string regexr)
     {
         std::regex expr(regexr);
     }
-    catch (std::regex_error e)
+    catch (const std::regex_error &e)
     {
         throw e;
     }
 
     std::vector<fs::directory_entry> result;
-    for (auto &&file : fs::recursive_directory_iterator(curWorkingDir))
+    for (const auto &file : fs::recursive_directory_iterator(curWorkingDir))
     {
         if (contentMatch(file, regexr))
             result.push_back(file);

@@ -69,7 +69,7 @@ int main(int argc, char const *argv[])
     {
         result = sif.searchDirectory(keyword);
     }
-    catch (std::regex_error e)
+    catch (const std::regex_error &)
     {
         std::cout << "wfind: regex error" << std::endl;
     }
