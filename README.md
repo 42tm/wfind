@@ -37,12 +37,16 @@ This will compile `main.cpp` and link `wfind.cpp`.
 
 ```bash
 make gcc
+
+make gcc-static # static linking
 ```
 
 #### MS Visual C++ Compiler
 
 ```bash
-make vc
+make msvc
+
+make msvc-static # static linking
 ```
 
 ### Clean

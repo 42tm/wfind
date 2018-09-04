@@ -25,22 +25,26 @@ OBJECT = lib/wfind.cpp
 # Versioning
 VER := $(shell git describe --tags)
 # VER := $(shell git rev-parse --short HEAD)
+ifdef VER
 BUILD_VER =_WFIND_VERSION=\"$(VER)\"
+GCC_BUILD = -D$(BUILD_VER)
+MSVC_BUILD = /D$(BUILD_VER)
+endif
 
 # By default, GCC C++ Compiler would be selected
 all: gcc
 
 gcc:
-	$(CC) $(MAIN) $(OBJECT) -o $(NAME) $(ARG) -D$(BUILD_VER)
+	$(CC) $(MAIN) $(OBJECT) -o $(NAME) $(ARG) $(GCC_BUILD)
 
 gcc-static:
-	$(CC) $(MAIN) $(OBJECT) -o $(NAME) $(ARG) $(ARG_STATIC) -D$(BUILD_VER)
+	$(CC) $(MAIN) $(OBJECT) -o $(NAME) $(ARG) $(ARG_STATIC) $(GCC_BUILD)
 
-vc:
-	$(VCC) $(V_ARG) /Fe"$(NAME)" $(MAIN) $(OBJECT) /D$(BUILD_VER)
+msvc:
+	$(VCC) $(V_ARG) /Fe"$(NAME)" $(MAIN) $(OBJECT) $(MSVC_BUILD)
 
-vc-static:
-	$(VCC) $(V_ARG) /Fe"$(NAME)" $(MAIN) $(OBJECT) $(V_ARG_STATIC) /D$(BUILD_VER)
+msvc-static:
+	$(VCC) $(V_ARG) /Fe"$(NAME)" $(MAIN) $(OBJECT) $(V_ARG_STATIC) $(MSVC_BUILD)
 
 release:
 
