@@ -9,7 +9,7 @@ V_ARG = /EHsc /std:c++latest /O2
 V_ARG_STATIC = /MT
 
 # Install on GNU/Linux
-INS_UTIL = cp
+INS_UTIL = \cp
 INS_TARGET = /usr/bin/
 ERR_PRINT = echo
 
@@ -45,9 +45,6 @@ msvc:
 
 msvc-static:
 	$(VCC) $(V_ARG) /Fe"$(NAME)" $(MAIN) $(OBJECT) $(V_ARG_STATIC) $(MSVC_BUILD)
-
-release:
-
 
 clean:
 	$(RM) $(NAME)
