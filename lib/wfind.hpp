@@ -15,7 +15,6 @@
 #include <filesystem>
 #elif __has_include(<experimental/filesystem>)
 #include <experimental/filesystem>
-#warning "Using <experimental/filesystem>"
 #else
 #error "Missing <filesystem>"
 #endif
