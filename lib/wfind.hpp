@@ -24,18 +24,18 @@ namespace fs = std::experimental::filesystem;
 class wfind
 {
   private:
+    /* Variables */
     fs::path curWorkingDir;
+
+    /* Methods */
     bool contentMatch(fs::path filename, std::string keyword);
 
   public:
+    /* Constructors */
     wfind(fs::path path = fs::current_path()) { changeDirectory(path); }
-    std::vector<fs::directory_entry> searchDirectory(std::string keyword);
-    bool changeDirectory(fs::path path)
-    {
-        if (!fs::exists(path) || !fs::is_directory(fs::status(path)))
-            return false;
-        this->curWorkingDir = path;
-        return true;
-    }
+
+    /* Methods */
     const fs::path &currentDirectory() { return curWorkingDir; }
+    std::vector<fs::directory_entry> searchDirectory(std::string keyword);
+    bool changeDirectory(fs::path path);
 };

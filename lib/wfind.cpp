@@ -6,6 +6,25 @@
 
 #include "wfind.hpp"
 
+/* Private method */
+bool wfind::contentMatch(fs::path filename, std::string regexr)
+{
+    std::ifstream inp(filename.string(), std::ios::in | std::ios::binary);
+    std::regex expr(regexr);
+    if (inp.is_open())
+    {
+        std::string content;
+        while (std::getline(inp, content))
+        {
+            if (std::regex_search(content, expr))
+                return true;
+        }
+        inp.close();
+    }
+    return false;
+}
+
+/* Public methods */
 std::vector<fs::directory_entry> wfind::searchDirectory(std::string regexr)
 {
     try
@@ -26,19 +45,10 @@ std::vector<fs::directory_entry> wfind::searchDirectory(std::string regexr)
     return result;
 }
 
-bool wfind::contentMatch(fs::path filename, std::string regexr)
+bool wfind::changeDirectory(fs::path path)
 {
-    std::ifstream inp(filename.string(), std::ios::in | std::ios::binary);
-    std::regex expr(regexr);
-    if (inp.is_open())
-    {
-        std::string content;
-        while (std::getline(inp, content))
-        {
-            if (std::regex_search(content, expr))
-                return true;
-        }
-        inp.close();
-    }
-    return false;
+    if (!fs::exists(path) || !fs::is_directory(fs::status(path)))
+        return false;
+    this->curWorkingDir = path;
+    return true;
 }

@@ -12,6 +12,7 @@ int main(int argc, char const *argv[])
     std::cout
         << "wfind - Find files whose contents match the given search regular expression" << std::endl;
 
+    /* Versioning */
     std::cout << "  version: ";
 #if defined(_WFIND_VERSION)
     std::cout << _WFIND_VERSION << std::endl;
@@ -19,24 +20,18 @@ int main(int argc, char const *argv[])
     std::cout << "custom build" << std::endl;
 #endif
 
+    /* Compiler version */
     std::cout << "  built with ";
-// Check compiler's name & version
 #if defined(__clang__)
     std::cout << "Clang " << __clang_version__ << std::endl;
 #elif defined(__GNUC__)
     std::cout
         << "GCC " << __GNUC__ << "." << __GNUC_MINOR__ << "." << __GNUC_PATCHLEVEL__;
-
-    #if defined(__MINGW64__)
+#if defined(__MINGW64__)
     std::cout << " (MinGW-w64 64bit)";
-    #elif defined(__MINGW32__)
+#elif defined(__MINGW32__)
     std::cout << " (MinGW/MinGW-w64 32bit)";
-    #endif
-
-    #ifdef __CYGWIN__
-    std::cout << " (Cygwin)";
-    #endif
-
+#endif
     std::cout << std::endl;
 #elif defined(_MSC_VER)
     std::cout
