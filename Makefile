@@ -43,8 +43,8 @@ clean:
 	$(RM) *.obj
 
 install:
-ifeq ($(OS),Linux)
-	$(INS_UTIL) $(NAME) $(INS_TARGET)
+ifeq ($(OS),Windows_NT)
+	$(ERR_PRINT) "\"make install\" is not available on Windows NT!
 else
-	$(ERR_PRINT) "\"make install\" is only available for GNU/Linux!
+	$(INS_UTIL) $(NAME) $(INS_TARGET)	
 endif
