@@ -11,12 +11,14 @@
 #include <fstream>
 #include <regex>
 
-#if (__cplusplus < 201703L || __GNUC__ < 8)
+#if __has_include(<filesystem>)
+#include <filesystem>
+namespace fs = std::filesystem;
+#elif __has_include(<experimental/filesystem>)
 #include <experimental/filesystem>
 namespace fs = std::experimental::filesystem;
 #else
-#include <filesystem>
-namespace fs = std::filesystem;
+#error "Missing <filesystem>"
 #endif
 
 class wfind
