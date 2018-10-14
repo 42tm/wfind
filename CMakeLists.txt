@@ -6,4 +6,4 @@ add_library(wfind_lib STATIC lib/wfind.cpp)
 
 add_executable(wfind main.cpp)
 
-target_link_libraries(wfind wfind_lib)
+target_link_libraries(wfind wfind_lib stdc++fs)
