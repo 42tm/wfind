@@ -9,12 +9,12 @@ The library is in `lib/`, and a simple program which has the same name that uses
 
 ### Requirement
 
-- C++ Version: C++ 17 (`__has_include`, `<filesystem>`)
+-   C++ Version: C++ 17 (`__has_include`, `<filesystem>`)
 
-- Tested compiler:
+-   Tested compiler:
 
-  - GNU C++ Compiler _5.3 or later_
-  - MS Visual C++ Compiler _15.3 or later_
+    -   GNU C++ Compiler _5.3 or later_
+    -   MS Visual C++ Compiler _15.3 or later_
 
 > Older versions of `g++` and other C++ compilers are yet to be tested, the build might fail.
 
@@ -23,34 +23,13 @@ The library is in `lib/`, and a simple program which has the same name that uses
 ### Command
 
 ```bash
-make
+mkdir build
+cd build
+cmake ..
+cmake --build .
 ```
 
 This will compile `main.cpp` and link `wfind.cpp`.
-
-> By default, the GNU C++ Compiler is chosen to compile. To use specific compiler, see below.
-
-#### GNU C++ Compiler
-
-```bash
-make gcc
-
-make gcc-static # static linking
-```
-
-#### MS Visual C++ Compiler
-
-```bash
-make msvc
-
-make msvc-static # static linking
-```
-
-### Clean
-
-```bash
-make clean
-```
 
 ## Run
 
@@ -58,16 +37,10 @@ make clean
 ./wfind [regex] [directory]
 ```
 
-- regex : The regular expression to be used to find in files
-- directory : (Optional) Directory that contains the files to look up for
+-   regex : The regular expression to be used to find in files
+-   directory : (Optional) Directory that contains the files to look up for
 
 > If the directory is omitted, the location is set to current working directory.
-
-## Install (GNU/Linux)
-
-```bash
-make install
-```
 
 ## Example
 
