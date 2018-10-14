@@ -6,4 +6,12 @@ add_library(wfind_lib STATIC lib/wfind.cpp)
 
 add_executable(wfind main.cpp)
 
-target_link_libraries(wfind wfind_lib stdc++fs)
+if(CMAKE_COMPILER_IS_GNUCXX OR "${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
+    if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS 9.0)
+        target_link_libraries(wfind wfind_lib stdc++fs)
+    else(CMAKE_CXX_COMPILER_VERSION VERSION_LESS 9.0)
+        target_link_libraries(wfind wfind_lib)
+    endif(CMAKE_CXX_COMPILER_VERSION VERSION_LESS 5.3)
+else(CMAKE_COMPILER_IS_GNUCXX OR "${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
+    target_link_libraries(wfind wfind_lib)
+endif(CMAKE_COMPILER_IS_GNUCXX OR "${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
