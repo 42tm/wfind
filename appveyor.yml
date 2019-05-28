@@ -14,7 +14,7 @@ install:
 
     cd build
 
-    cmake -G "Visual Studio 15 2017" -A %ARCH% ..
+    cmake -A %ARCH% ..
 build:
   project: build/wfind.sln
   verbosity: minimal
