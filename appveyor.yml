@@ -1,33 +1,21 @@
 version: '{build}'
-pull_requests:
-  do_not_increment_build_number: true
-skip_tags: true
 image: Visual Studio 2017
-init:
-- cmd: call "%VCVARS%"
+configuration: Release
 environment:
   matrix:
-  - VCVARS: C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat
-    ARCH: 64
-  - VCVARS: C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars32.bat
-    ARCH: 32
+  - ARCH: Win32
+  - ARCH: x64
 install:
 - cmd: >-
     mkdir build
 
     cd build
 
-    cmake ..
-build_script:
-- cmd: >-
-    cmake --build .
-
-    cd Debug
-
-    if %ARCH%==64 (ren wfind.exe wfind_64.exe)
+    cmake -A %ARCH% ..
+build:
+  project: build/wfind.sln
+  verbosity: minimal
 artifacts:
-- path: build\Debug\wfind.exe
+- path: build\Release\wfind.exe
   name: wfind
-- path: build\Debug\wfind_64.exe
-  name: wfind_64
 deploy: off
